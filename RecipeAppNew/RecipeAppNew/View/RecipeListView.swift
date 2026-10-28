@@ -28,7 +28,7 @@ struct RecipeListView: View {
         NavigationStack{
             List(recipes, id: \.id){recipe in
                 NavigationLink(
-                    destination: RecipeDetailView()
+                    destination: RecipeDetailView(recipe: recipe)
                 ){
                     RecipeRowView(recipe: recipe)
                 }
