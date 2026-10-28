@@ -6,6 +6,10 @@
 //
 import Foundation
 
+struct RecipeResponse: Codable {
+    let recipes: [RecipeDTO]
+}
+
 enum Difficulty: String, Codable {
     case easy = "Easy"
     case medium = "Medium"
@@ -19,10 +23,9 @@ struct RecipeDTO: Codable, Identifiable {
     let instructions: [String]
     let prepTimeMinutes: Int
     let cookTimeMinutes: Int
-    let serving: Int
+    let servings: Int         // FIXED: Changed from 'serving' to 'servings'
     let image: String
     let cuisine: String
     let difficulty: Difficulty
     let rating: Double
 }
-
