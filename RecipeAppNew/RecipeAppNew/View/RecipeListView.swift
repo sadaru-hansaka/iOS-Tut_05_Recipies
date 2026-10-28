@@ -6,13 +6,38 @@
 //
 
 import SwiftUI
+struct Recipe {
+    let id: Int
+    let name: String
+    let cuisine: String
+    let imageURL : String
+    let rating: Double
+}
 
-struct RecipeListViewModel: View {
+struct RecipeListView: View {
+    
+    let recipes :[Recipe] = [
+        Recipe(id: 1,name: "aefrgaerg", cuisine: "aergerg", imageURL: "https://cdn.dummyjson.com/recipe-images/1.webp", rating: 4.6),
+        
+        Recipe(id:2,name: "aefrgaerg", cuisine: "aergerg", imageURL: "https://cdn.dummyjson.com/recipe-images/1.webp", rating: 4.6),
+
+        Recipe(id:3,name: "aefrgaerg", cuisine: "aergerg", imageURL: "https://cdn.dummyjson.com/recipe-images/1.webp", rating: 4.6)
+
+    ]
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack{
+            List(recipes, id: \.id){recipe in
+                NavigationLink(
+                    destination: RecipeDetailView()
+                ){
+                    RecipeRowView(recipe: recipe)
+                }
+            }
+            .navigationTitle("Recipies")
+        }
     }
 }
 
 #Preview {
-    RecipeListViewModel()
+    RecipeListView()
 }
