@@ -7,12 +7,12 @@
 
 import Foundation
 import SwiftData
-
-enum Difficulty {
-    case easy
-    case medium
-    case hard
-}
+//
+//enum Difficulty {
+//    case easy
+//    case medium
+//    case hard
+//}
 
 @Model
 final class FavoriteRecipe {
