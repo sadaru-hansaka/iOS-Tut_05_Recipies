@@ -12,8 +12,13 @@ struct RecipeDetailView: View {
     
     var body: some View {
         VStack{
-            RecipeBadge(imageURL: recipe.imageURL, size: 60)
-            Text(recipe.name)
+            HStack{
+                RecipeBadge(imageURL: recipe.imageURL, size: 60)
+                Text(recipe.name)
+
+            }
+            
+            Text(recipe.cuisine)
         }
     }
 }
