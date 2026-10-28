@@ -16,9 +16,9 @@ final class RecipeListViewModel {
         self.context = context
     }
     
-    func addFavorite (id: Int, name: String, prepTimeMinutes: Int, cookTimeMinutes: Int, servings: Int, difficulty: Difficulty, cuisine: String, caloriesPerServing: Int, image: String?)
+    func addFavorite (id: Int, name: String, prepTimeMinutes: Int, cookTimeMinutes: Int, servings: Int, difficulty: Difficulty, cuisine: String, caloriesPerServing: Int, isFavorite: Bool = true, image: String?)
     {
-        let recipe = FavoriteRecipe(id: id, name: name, prepTimeMinutes: prepTimeMinutes, cookTimeMinutes: cookTimeMinutes, servings: servings, difficulty: difficulty, cuisine: cuisine, caloriesPerServing: caloriesPerServing, image: image)
+        let recipe = FavoriteRecipe(id: id, name: name, prepTimeMinutes: prepTimeMinutes, cookTimeMinutes: cookTimeMinutes, servings: servings, difficulty: difficulty, cuisine: cuisine, caloriesPerServing: caloriesPerServing, isFavorite: isFavorite, image: image)
         
         context.insert(recipe)
     }

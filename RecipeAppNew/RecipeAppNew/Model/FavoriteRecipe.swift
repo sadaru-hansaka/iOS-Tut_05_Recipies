@@ -24,9 +24,10 @@ final class FavoriteRecipe {
     var difficulty: Difficulty
     var cuisine: String
     var caloriesPerServing: Int
+    var isFavorite: Bool
     var image: String?
     
-    init(id: Int, name: String, prepTimeMinutes: Int, cookTimeMinutes: Int, servings: Int, difficulty: Difficulty, cuisine: String, caloriesPerServing: Int, image: String?) {
+    init(id: Int, name: String, prepTimeMinutes: Int, cookTimeMinutes: Int, servings: Int, difficulty: Difficulty, cuisine: String, caloriesPerServing: Int, isFavorite: Bool = true, image: String?) {
         self.id = id
         self.name = name
         self.prepTimeMinutes = prepTimeMinutes
@@ -35,6 +36,7 @@ final class FavoriteRecipe {
         self.difficulty = difficulty
         self.cuisine = cuisine
         self.caloriesPerServing = caloriesPerServing
+        self.isFavorite = isFavorite
         self.image = image
     }
 }
